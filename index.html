@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h1>
+<center>
+Hardy Weinberg Equillibrium
+</center>
+</h1>
+
+<h2>
+Gene Frequency Simulation
+</h2>
+
+<div class="left_margin">
+<form class="freq">
+	<label for="pfreq">
+	Enter in dominant allele frequency: 
+	</label><br>
+	<input type="text" id="pfreq" name="pfreq"><br>
+	<label for="qfreq">
+	Enter in recessive allele frequency: 
+	</label><br>
+	<input type="text" id="qfreq" name="qfreq"><br>
+</form>
+<p class="freq">
+new generation will be <span id="homoD"> x </span>% homozygous dominant, <span id="heteroD"> y </span>% heterozygous dominant, and <span id="homoR"> z </span>% homozygous recessive
+</p>
+<button id="run">
+GO
+</button>
+</div>
+
+<div class="bottom_of_screen">
+<p class="stats">
+generation #
+</p>
+<p class="stats">
+new p value
+<br>
+new q value
+</p>
+</div>
+
+<script type="text/javascript" src="main.js">
+</script>
+</body>
+</html>
+
