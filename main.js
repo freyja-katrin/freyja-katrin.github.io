@@ -17,6 +17,15 @@ function my() {
 	var z = document.getElementById("homoR")
 	var homoR = qinput * qinput
 	z.innerHTML = homoR
+
+	var popSize = document.getElementById("popSize").value
+	var homoDNum = homoD * popSize
+	document.getElementById("t1").innerHTML = homoDNum
+	var heteroDNum = heteroD * popSize
+	document.getElementById("t2").innerHTML = heteroDNum
+	var homoRNum = homoR * popSize
+	document.getElementById("t3").innerHTML = homoRNum
+
 	/*
 	get element then use element i found and place it then put .text(variable)
 	*/

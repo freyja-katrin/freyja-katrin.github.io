@@ -18,22 +18,46 @@ Gene Frequency Simulation
 </h2>
 
 <div class="left_margin">
-<form class="freq">
-	<label for="pfreq">
-	Enter in dominant allele frequency: 
-	</label><br>
-	<input type="text" id="pfreq" name="pfreq"><br>
-	<label for="qfreq">
-	Enter in recessive allele frequency: 
-	</label><br>
-	<input type="text" id="qfreq" name="qfreq"><br>
-</form>
-<p class="freq">
-new generation will be <span id="homoD"> x </span>% homozygous dominant, <span id="heteroD"> y </span>% heterozygous dominant, and <span id="homoR"> z </span>% homozygous recessive
-</p>
-<button id="run">
-GO
-</button>
+	<form class="freq">
+		<label for="popSize" id = >
+			Enter in population size (10 - 10,000)
+		</label><br>
+		<input type="number" step = "1" id="popSize" min = "10" max = "10000" name="popSize"><br>
+
+		<!--Maybe use slider for popsize -->
+
+		<label for="pfreq">
+		Enter in dominant allele frequency: 
+		</label><br>
+		<input type="text" id="pfreq" name="pfreq"><br>
+		<label for="qfreq">
+		Enter in recessive allele frequency: 
+		</label><br>
+		<input type="text" id="qfreq" name="qfreq"><br>
+	</form>
+	<p class="freq">
+	new generation will be <span id="homoD"> x </span>% homozygous dominant, <span id="heteroD"> y </span>% heterozygous dominant, and <span id="homoR"> z </span>% homozygous recessive
+	</p>
+	<button id="run">
+	GO
+	</button>
+</div>
+
+
+<div class = "table">
+	<table>
+		<tr>
+			<th>homozygous domoinant</th>
+			<th>heterozygous recessive</th>
+			<th>homozygous recessive</th>
+		</tr>
+		<tr>
+			<th id = "t1"> &nbsp; </th>
+			<th id = "t2"> &nbsp; </th>
+			<th id = "t3"> &nbsp; </th>
+		</tr>
+		
+	</table>
 </div>
 
 <div class="bottom_of_screen">

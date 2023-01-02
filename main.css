@@ -18,3 +18,11 @@ h2 {
 .left_margin {
 	margin-left: 20px;
 }
+
+table, th, td {
+	margin-top: 20px;
+	margin-left: 20px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	font-weight: normal;
+}
