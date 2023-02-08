@@ -30,5 +30,13 @@ function my() {
 	get element then use element i found and place it then put .text(variable)
 	*/
 }
+
+function sample(){
+
+}
+
 var d = document.getElementById("run")
 d.addEventListener("click", my)
+
+var s = document.getElementById("sample")
+s.addEventListener("click", )

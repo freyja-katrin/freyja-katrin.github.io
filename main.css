@@ -1,5 +1,6 @@
 h1 {
 	color: blue;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 h2 {
 	text-align: center;
@@ -17,6 +18,13 @@ h2 {
 }
 .left_margin {
 	margin-left: 20px;
+}
+
+.sample{
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	margin-top: 10px;
 }
 
 table, th, td {
