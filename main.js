@@ -1,4 +1,4 @@
-var homoD, homorR, heteroD, popSize
+var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum
 const offspring = new Array()
 
 function my() {
@@ -21,49 +21,58 @@ function my() {
 	homoR = qinput * qinput 
 	z.innerHTML = 100 * Math.round((homoR + Number.EPSILON)*1000) / 1000
 
-	/*var popSize = document.getElementById("popSize").value
-	var homoDNum = homoD * popSize
+	popSize = document.getElementById("popSize").value
+
+	homoDNum = 0
+	heteroDNum = 0
+	homoRNum = 0
+
+	assignOffspring()
+	
+	
 	document.getElementById("t1").innerHTML = homoDNum
-	var heteroDNum = heteroD * popSize
 	document.getElementById("t2").innerHTML = heteroDNum
-	var homoRNum = homoR * popSize
 	document.getElementById("t3").innerHTML = homoRNum
-	*/
+	
 	/*
 	get element then use element i found and place it then put .text(variable)
 	*/
 }
 
-function sample(){
-	document.getElementById("result").innerHTML = assign()
+function sampleWithReplacement(){
+	var rand = Math.floor((Math.random() * offspring.length))
+	document.getElementById("result").innerHTML = offspring[rand]
 }
 
 function assign(){
 	var rand = Math.random() * 100 + 1
 
 	if(rand < (homoD * 100)){
+		homoDNum++
+		console.log(homoDNum)
 		return "AA"
 	} else if(rand < (homoD* 100 + heteroD * 100)){
+		heteroDNum++
+		console.log(heteroDNum)
 		return "Aa"
 	} else {
+		homoRNum++
+		console.log(homoRNum)
 		return "aa"
 	}
 }
 
 function sampleNoReplacement(){
-	var rand = Math.random() * popSize
-	if(offspring[rand] != null){
-		document.getElementById("result").innerHTML = offspring[rand]
-		offspring[rand] != null
-	} else{
-		document.getElementById("result").innerHTML = "no"
-	}
+	var rand = Math.floor((Math.random() * offspring.length))
+	document.getElementById("result").innerHTML = offspring[rand]
+	offspring.splice(rand, rand + 1)
 		
 }
 
 function assignOffspring(){
 	for(let i = 0; i < popSize; i++){
-		offspring[i] = assign
+		console.log("pass")
+		offspring[i] = assign()
 	}
 }
 
@@ -71,7 +80,7 @@ var d = document.getElementById("run")
 d.addEventListener("click", my)
 
 var s = document.getElementById("sample")
-s.addEventListener("click", sample)
+s.addEventListener("click", sampleWithReplacement)
 
 var r = document.getElementById("noReplacement")
 r.addEventListener("click", sampleNoReplacement)
