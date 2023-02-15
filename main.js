@@ -1,5 +1,6 @@
 var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum
 const offspring = new Array()
+const copy = new Array()
 
 function my() {
 	var ptext_field = document.getElementById("pfreq")
@@ -63,9 +64,9 @@ function assign(){
 }
 
 function sampleNoReplacement(){
-	var rand = Math.floor((Math.random() * offspring.length))
-	document.getElementById("result").innerHTML = offspring[rand]
-	offspring.splice(rand, rand + 1)
+	var rand = Math.floor((Math.random() * copy.length))
+	document.getElementById("result").innerHTML = copy[rand]
+	copy.splice(rand, rand + 1)
 		
 }
 
@@ -73,6 +74,10 @@ function assignOffspring(){
 	for(let i = 0; i < popSize; i++){
 		console.log("pass")
 		offspring[i] = assign()
+	}
+	
+	for(let i = 0; i < offspring.length; i++){
+		copy[i] = offspring[i]
 	}
 }
 
