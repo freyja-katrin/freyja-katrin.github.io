@@ -1,5 +1,32 @@
+html, body {
+	background-color: rgb(170, 195, 164);
+	background-image: url("https://thumbs.dreamstime.com/b/silhouette-group-happy-children-22277571.jpg");
+	padding : 0px;
+	margin : 0px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	overflow-x:hidden;
+	height:100%;
+}
+
+#navbar {
+	width: 100%;
+	margin : 0px;
+	padding : 5px;
+	height: 60px;
+	display : flex;
+	flex-direction: row;
+	background-color:rgb(33, 78, 52);
+	z-index:-5;
+	margin-bottom:15px;
+	
+}
+#navbar img {
+	margin: 5px;
+}
 h1 {
-	color: blue;
+	color: rgb(103, 70, 60);
 	font-family: 'Roboto Condensed', sans-serif;
 }
 h2 {
@@ -16,8 +43,25 @@ h2 {
 	bottom: 0px;
 	right: 0px;
 }
-.left_margin {
-	margin-left: 20px;
+#main {
+	width: 60%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	background-color:rgb(170, 195, 164);
+	border-radius:15px;
+	box-shadow: 0px 0px 10px 5px rgba(33, 78, 52, 0.753);
+	gap:10%;
+}
+
+.freq {
+	border: 1px solid black;
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	width: 450px;
+	margin: auto;
 }
 
 .sample{
@@ -28,9 +72,70 @@ h2 {
 }
 
 table, th, td {
+	padding: 5px;
 	margin-top: 20px;
 	margin-left: 20px;
 	border: 1px solid black;
 	border-collapse: collapse;
 	font-weight: normal;
+}
+
+table {
+	margin: auto;
+	margin-top: 20px;
+}
+
+input {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+
+input:active {
+
+	border: 0px 0px 3px solid rgb(103, 70, 60);
+}
+
+button {
+	padding: 10px;
+	border-radius: 5px;
+	border:none;
+	background-color: rgb(103, 70, 60);
+	color: white; 
+	/* rgb(243, 196, 182); */
+	transition: 0.25s all;
+	margin: 5px;
+}
+
+button:hover {
+	box-shadow: 0px 0px 0px 5px rgba(103, 70, 60, 0.5);
+	transition: 0.25s all;
+}
+button:active {
+	box-shadow: none; 
+	 /* 0px 0px 0px 5px #4169e1; */
+
+}
+
+select, option {
+	padding: 5px;
+	border-radius: 5px;
+	max-width: 20%;
+}
+
+.choochootrain{
+	display:flex;
+	flex-direction:column;
+	/* gap:10px; */
+	background-color:white;
+	border-radius:5px;
+	padding:15px;
+	border:1px solid #000;
+
+}
+
+.was {
+	font-family:'Courier New', Courier, monospace;
+	background-color:rgba(33, 78, 52, 0.384);
 }
