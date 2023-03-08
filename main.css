@@ -10,7 +10,7 @@ html, body {
 	height:100%;
 }
 
-#centerPopup, #content {
+.centerPopup, .popUpContent {
 	position:absolute;
  	top:50%;
  	left:50%;
@@ -27,7 +27,7 @@ html, body {
  	color: #0a5878;
 }
 
-.content {
+.popUpContent {
  	visibility:hidden;  
  	width: 330px;
  	height: auto;
@@ -50,7 +50,7 @@ html, body {
 }
 
 
-#click:checked~.content {
+#click:checked~.popUpContent {
 	opacity:1;
 	visibility:visible;
 }
@@ -85,11 +85,7 @@ h1 {
 h2 {
 	text-align: center;
 }
-.freq {
-	/*
-	margin-left: 20px;
-	*/
-}
+
 .bottom_of_screen {
 	margin-right: 50px;
 	position: absolute;
