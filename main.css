@@ -5,9 +5,62 @@ html, body {
 	margin : 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
-	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family:sans-serif, Arial, 'Arial Narrow';
 	overflow-x:hidden;
 	height:100%;
+}
+
+#centerPopup, #popUpContent {
+	position:absolute;
+ 	top:50%;
+ 	left:50%;
+ 	transform:translate(-50%,-50%);
+}
+.click-me {
+ 	background: #dde1e7;
+ 	cursor:pointer;
+}
+#click {
+ 	display:none;
+}
+.click-me:hover {
+ 	color: #0a5878;
+}
+
+.content {
+ 	visibility:hidden;  
+ 	width: 330px;
+ 	height: auto;
+ 	background: #dde1e7;
+ 	padding: 30px 35px 40px;
+ 	box-sizing: border-box;
+ 	border-radius: 5px;
+}
+
+#x {
+	position:absolute;
+	top: 0;
+	margin-top: 10px;
+ 	right:10px;
+ 	font-size:25px;
+ 	padding: 3px;
+ 	padding-left: 11px;
+ 	border-radius: 50%;
+ 	cursor:pointer;
+}
+
+
+#click:checked~.content {
+	opacity:1;
+	visibility:visible;
+}
+
+.text {
+ 	font-size: 30px;
+ 	color: #000000;
+ 	font-weight: 600;
+ 	text-align: center;
+ 	letter-spacing: 2px;
 }
 
 #navbar {
