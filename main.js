@@ -65,19 +65,19 @@ function assign(){
 
 function sampleNoReplacement(){
 	var rand = Math.floor((Math.random() * copy.length))
-	document.getElementById("result").innerHTML = copy[rand]
-	copy.splice(rand, rand + 1)
+	document.getElementById("result").innerHTML = copy[rand];
+	copy.splice(rand, rand + 1);
 		
 }
 
 function assignOffspring(){
 	for(let i = 0; i < popSize; i++){
-		console.log("pass")
-		offspring[i] = assign()
+		console.log("pass");
+		offspring[i] = assign();
 	}
 	
 	for(let i = 0; i < offspring.length; i++){
-		copy[i] = offspring[i]
+		copy[i] = offspring[i];
 	}
 }
 
