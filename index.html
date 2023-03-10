@@ -64,10 +64,21 @@
 				<label for="naturalSelection" id=>
 					Natural Selection
 				</label>
-				<label for="homoDper" id="homoDper">
+				<label for="homoDTK" id="homoDTK">
 					Enter in percentage of homozygous dominant to kill:
 				</label>
-				<input type="text" id="pfreq" name="pfreq">
+				<input type="text" id="homoDTKin" name="homoDTKin">
+				<label for="hetTK" id="hetTK">
+					Enter in percentage of heterozygous to kill:
+				</label>
+				<input type="text" id="hetTKin" name="hetTKin">
+				<label for="homoRTK" id="homoRTK">
+					Enter in percentage of homozygous recessive to kill:
+				</label>
+				<input type="text" id="homoRTKin" name="homoRTKin">
+				<button id="natSelBut">
+					GO
+				</button>
 			</div>
 			
 		</div>
@@ -129,30 +140,6 @@
 		</div>
 	</div>
 
-	<div class="centerPopUp">
-		<input type="checkbox" id="click">
-		<label for="click" class="click-me">Show Graph </label>
-		<div class="popUpContent">
-			<label for="click" id="x">x</label>
-			<table>
-				<tr>		
-					<th colspan="2">Dominant</th>
-					<th>Recessive</th>
-				</tr>
-				<tr>
-					<th style="width:100px;">AA</th>
-					<th style="width:100px;">Aa</th>
-					<th style="width:100px;">aa</th>
-				</tr>
-				<tr>
-					<th id="t1"> &nbsp; </th>
-					<th id="t2"> &nbsp; </th>
-					<th id="t3"> &nbsp; </th>
-				</tr>
-			</table>
-		  </div>
-		</div>
-	</div>
 
 	<script type="text/javascript" src="main.js">
 	</script>
