@@ -73,29 +73,31 @@
 		</div>
 
 		
-
-		<!-- have a reset button and new generation button?-->
-
-		<div class="table">
-			<table>
-				<tr>
-					<th colspan="2">Dominant</th>
-					<th>Recessive</th>
-				</tr>
-				<tr>
-					<th style="width:100px;">AA</th>
-					<th style="width:100px;">Aa</th>
-					<th style="width:100px;">aa</th>
-				</tr>
-				<tr>
-					<th id="t1"> &nbsp; </th>
-					<th id="t2"> &nbsp; </th>
-					<th id="t3"> &nbsp; </th>
-				</tr>
-			</table>
-
-
+		<div class="centerPopUp">
+			<input type="checkbox" id="click">
+			<label for="click" class="click-me">Show Graph </label>
+			<div class="popUpContent">
+				<label for="click" id="x">x</label>
+				<table>
+					<tr>		
+						<th colspan="2">Dominant</th>
+						<th>Recessive</th>
+					</tr>
+					<tr>
+						<th style="width:100px;">AA</th>
+						<th style="width:100px;">Aa</th>
+						<th style="width:100px;">aa</th>
+					</tr>
+					<tr>
+						<th id="t1"> &nbsp; </th>
+						<th id="t2"> &nbsp; </th>
+						<th id="t3"> &nbsp; </th>
+					</tr>
+				</table>
+			  </div>
+			</div>
 		</div>
+		<!-- have a reset button and new generation button?-->
 
 		<!-- <label for="Replacement">Replacement</label>
 		<select name="Replacement" id="Replacement">
@@ -118,39 +120,15 @@
 		</div>
 
 		<div class="bottom_of_screen">
-			<p class="stats">
+			<p id = "genNum">
 				generation #
 			</p>
-			<p class="stats">
-				new p value
-				<br>
-				new q value
+			<p id = "pVal">
+				p value
 			</p>
-		</div>
-	</div>
-
-	<div class="centerPopUp">
-		<input type="checkbox" id="click">
-		<label for="click" class="click-me">Show Graph </label>
-		<div class="popUpContent">
-			<label for="click" id="x">x</label>
-			<table>
-				<tr>		
-					<th colspan="2">Dominant</th>
-					<th>Recessive</th>
-				</tr>
-				<tr>
-					<th style="width:100px;">AA</th>
-					<th style="width:100px;">Aa</th>
-					<th style="width:100px;">aa</th>
-				</tr>
-				<tr>
-					<th id="t1"> &nbsp; </th>
-					<th id="t2"> &nbsp; </th>
-					<th id="t3"> &nbsp; </th>
-				</tr>
-			</table>
-		  </div>
+			<p id = "qVal">
+				q value
+			</p>
 		</div>
 	</div>
 

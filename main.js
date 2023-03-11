@@ -1,14 +1,20 @@
-var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum
+var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum, repSampleNum, noRepSampleNum
+var genNum = 0;
 const offspring = new Array()
 const copy = new Array()
 
 function my() {
 	var ptext_field = document.getElementById("pfreq")
-	pinput = ptext_field.value
+	const pinput = ptext_field.value
 	console.log("p: " + pinput)
-	qtext_field = document.getElementById("qfreq")
-	qinput = qtext_field.value
+	var qtext_field = document.getElementById("qfreq")
+	const qinput = qtext_field.value
 	console.log("q: " + qinput)
+	
+	genNum += 1;
+	document.getElementById("genNum").innerHTML = "generation #" + genNum
+	document.getElementById("pVal").innerHTML = "p value: " + pinput
+	document.getElementById("qVal").innerHTML = "q value: " + qinput
 	
 	var x = document.getElementById("homoD")
 	homoD = pinput * pinput 
@@ -27,22 +33,27 @@ function my() {
 	homoDNum = 0
 	heteroDNum = 0
 	homoRNum = 0
+	noRepSampleNum = 0;
+	repSampleNum = 0;
 
 	assignOffspring()
-	
-	
+
 	document.getElementById("t1").innerHTML = homoDNum
 	document.getElementById("t2").innerHTML = heteroDNum
 	document.getElementById("t3").innerHTML = homoRNum
-	
-	/*
-	get element then use element i found and place it then put .text(variable)
-	*/
+
+}
+
+function naturalSelection(){
 }
 
 function sampleWithReplacement(){
 	var rand = Math.floor((Math.random() * offspring.length))
-	document.getElementById("result").innerHTML = offspring[rand]
+	var samp = offspring[rand];
+	if(samp != undefined){
+		repSampleNum += 1; 
+		document.getElementById("result").innerHTML = "Sample #" + repSampleNum + " " + samp
+	} 
 }
 
 function assign(){
@@ -65,9 +76,12 @@ function assign(){
 
 function sampleNoReplacement(){
 	var rand = Math.floor((Math.random() * copy.length))
-	document.getElementById("result").innerHTML = copy[rand];
-	copy.splice(rand, rand + 1);
-		
+	var samp = copy[rand]
+	if(samp != undefined){
+		noRepSampleNum += 1;
+		document.getElementById("result").innerHTML = "Sample #" + noRepSampleNum + " " + samp;
+		copy.splice(rand, 1);
+	}	
 }
 
 function assignOffspring(){

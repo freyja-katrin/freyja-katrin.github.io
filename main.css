@@ -167,6 +167,7 @@ select, option {
  	top:50%;
  	left:50%;
  	transform:translate(-50%,-50%);
+	text-align: center;
 }
 .click-me {
  	background: #dde1e7;
