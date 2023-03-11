@@ -1,4 +1,4 @@
-var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum, repSampleNum, noRepSampleNum
+var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum, repSampleNum, noRepSampleNum, x, y, z
 var genNum = 0;
 const offspring = new Array()
 const copy = new Array()
@@ -16,15 +16,20 @@ function my() {
 	document.getElementById("pVal").innerHTML = "p value: " + pinput
 	document.getElementById("qVal").innerHTML = "q value: " + qinput
 	
-	var x = document.getElementById("homoD")
+	genNum += 1;
+	document.getElementById("genNum").innerHTML = "generation #" + genNum
+	document.getElementById("pVal").innerHTML = "p value: " + pinput
+	document.getElementById("qVal").innerHTML = "q value: " + qinput
+	
+	x = document.getElementById("homoD")
 	homoD = pinput * pinput 
 	x.innerHTML = 100 * Math.round((homoD + Number.EPSILON)*1000) / 1000
-	
-	var y = document.getElementById("heteroD")
+
+	y = document.getElementById("heteroD")
 	heteroD = pinput * qinput * 2 
 	y.innerHTML = 100 * Math.round((heteroD + Number.EPSILON)*1000) / 1000
 	
-	var z = document.getElementById("homoR")
+	z = document.getElementById("homoR")
 	homoR = qinput * qinput 
 	z.innerHTML = 100 * Math.round((homoR + Number.EPSILON)*1000) / 1000
 
@@ -38,6 +43,14 @@ function my() {
 
 	assignOffspring()
 
+	updateTable()
+	
+	/*
+	get element then use element i found and place it then put .text(variable)
+	*/
+}
+
+function updateTable() {
 	document.getElementById("t1").innerHTML = homoDNum
 	document.getElementById("t2").innerHTML = heteroDNum
 	document.getElementById("t3").innerHTML = homoRNum
@@ -95,8 +108,27 @@ function assignOffspring(){
 	}
 }
 
+function killFrac(){
+	var killD = document.getElementById("homoDTKin")
+	killDin = killD.value
+	homoDNum -= homoDNum*killDin
+	var killHet = document.getElementById("hetTKin")
+	killHetin = killHet.value
+	heteroDNum -= heteroDNum*killHetin
+	var killR = document.getElementById("homoRTKin")
+	killRin = killR.value
+	homoRNum -= homoRNum*killRin
+	console.log(homoRNum)
+	//document.write(homoDNum)
+	updateTable()
+
+}
+
 var d = document.getElementById("run")
 d.addEventListener("click", my)
+
+var n = document.getElementById("natSelBut")
+n.addEventListener("click", killFrac)
 
 var s = document.getElementById("sample")
 s.addEventListener("click", sampleWithReplacement)

@@ -5,7 +5,7 @@ html, body {
 	margin : 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
-	font-family: sans-serif, Arial, 'Arial Narrow';
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	overflow-x:hidden;
 	height:100%;
 }
