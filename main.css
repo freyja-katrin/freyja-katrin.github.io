@@ -5,7 +5,7 @@ html, body {
 	margin : 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
-	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family: 'Inconsolata', 'Arial Narrow', Arial;
 	overflow-x:hidden;
 	height:100%;
 }
@@ -14,7 +14,7 @@ html, body {
 	width: 100%;
 	margin : 0px;
 	padding : 5px;
-	height: 60px;
+	height: 50px;
 	display : flex;
 	flex-direction: row;
 	background-color:rgb(33, 78, 52);
@@ -170,7 +170,7 @@ select, option {
 	text-align: center;
 }
 .click-me {
- 	background: #dde1e7;
+ 	background: #f0f3f6;
  	cursor:pointer;
 }
 #click {
@@ -184,7 +184,7 @@ select, option {
  	visibility:hidden;  
  	width: 330px;
  	height: auto;
- 	background: #dde1e7;
+ 	background: #f0f3f6;
  	padding: 30px 35px 40px;
  	box-sizing: border-box;
  	border-radius: 5px;
@@ -201,7 +201,6 @@ select, option {
  	cursor:pointer;
 }
 
-
 #click:checked~.popUpContent {
 	opacity:1;
 	visibility:visible;
@@ -212,4 +211,42 @@ select, option {
  	font-weight: 600;
  	text-align: center;
  	letter-spacing: 2px;
+}
+
+#title {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	max-width: 50%;
+}
+
+#t1{
+	font-family: 'Inconsolata';
+	font-size: 65px;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+
+#t2{
+	font-family: 'Inconsolata';
+	font-size: 25px;
+	font-weight: 300;
+	margin-top: 10px;
+}
+
+#homeGoButton{
+	display: inline-block;
+	height: 45px;
+	background: rgba(0,0,0,0);
+	border-radius: 2px;
+	border: none;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px;
+	width: 200px;
+	transition: all .5s;
+	cursor: pointer;
+	margin: 5px;	
 }
