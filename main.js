@@ -1,9 +1,17 @@
 var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum, repSampleNum, noRepSampleNum, x, y, z
 var genNum = 0;
+var newP, newQ;
 const offspring = new Array()
 const copy = new Array()
 
 function my() {
+
+	homoDNum = 0
+	heteroDNum = 0
+	homoRNum = 0
+	noRepSampleNum = 0;
+	repSampleNum = 0;
+	
 	var ptext_field = document.getElementById("pfreq")
 	const pinput = ptext_field.value
 	console.log("p: " + pinput)
@@ -11,15 +19,7 @@ function my() {
 	const qinput = qtext_field.value
 	console.log("q: " + qinput)
 	
-	genNum += 1;
-	document.getElementById("genNum").innerHTML = "generation #" + genNum
-	document.getElementById("pVal").innerHTML = "p value: " + pinput
-	document.getElementById("qVal").innerHTML = "q value: " + qinput
-	
-	genNum += 1;
-	document.getElementById("genNum").innerHTML = "generation #" + genNum
-	document.getElementById("pVal").innerHTML = "p value: " + pinput
-	document.getElementById("qVal").innerHTML = "q value: " + qinput
+	reuse()
 	
 	x = document.getElementById("homoD")
 	homoD = pinput * pinput 
@@ -35,29 +35,33 @@ function my() {
 
 	popSize = document.getElementById("popSize").value
 
-	homoDNum = 0
-	heteroDNum = 0
-	homoRNum = 0
-	noRepSampleNum = 0;
-	repSampleNum = 0;
-
 	assignOffspring()
 
 	updateTable()
+
+	calcDispNewPQ()
+
+	genNum += 1;
+	document.getElementById("genNum").innerHTML = "generation #" + genNum
+	
 	
 	/*
 	get element then use element i found and place it then put .text(variable)
 	*/
 }
 
+function calcDispNewPQ() {
+	newP = (homoDNum*2 + heteroDNum)/(popSize*2)
+	newQ = (homoRNum*2+heteroDNum)/(popSize*2)
+
+	document.getElementById("pVal").innerHTML = "p value: " + newP
+	document.getElementById("qVal").innerHTML = "q value: " + newQ
+}
+
 function updateTable() {
 	document.getElementById("t1").innerHTML = homoDNum
 	document.getElementById("t2").innerHTML = heteroDNum
 	document.getElementById("t3").innerHTML = homoRNum
-
-}
-
-function naturalSelection(){
 }
 
 function sampleWithReplacement(){
@@ -109,19 +113,34 @@ function assignOffspring(){
 }
 
 function killFrac(){
+	var toSub = 0
 	var killD = document.getElementById("homoDTKin")
 	killDin = killD.value
+	toSub += homoDNum*killDin
 	homoDNum -= homoDNum*killDin
+
 	var killHet = document.getElementById("hetTKin")
 	killHetin = killHet.value
+	toSub += heteroDNum*killHetin
 	heteroDNum -= heteroDNum*killHetin
+
 	var killR = document.getElementById("homoRTKin")
 	killRin = killR.value
+	toSub += homoRNum*killRin
 	homoRNum -= homoRNum*killRin
-	console.log(homoRNum)
+	
+	popSize -= toSub
 	//document.write(homoDNum)
+	calcDispNewPQ()
 	updateTable()
 
+}
+
+function reuse() {
+	if (document.getElementById("useNewCheck").checked) {
+		document.getElementById("pfreq").value = newP
+		document.getElementById("qfreq").value = newQ
+	}
 }
 
 var d = document.getElementById("run")
@@ -135,3 +154,6 @@ s.addEventListener("click", sampleWithReplacement)
 
 var r = document.getElementById("noReplacement")
 r.addEventListener("click", sampleNoReplacement)
+
+var c = document.getElementById("useNewCheck")
+c.addEventListener("click", reuse)
