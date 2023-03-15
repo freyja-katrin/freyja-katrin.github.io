@@ -44,7 +44,7 @@
 				</label>
 				<input type="text" id="pfreq" name="pfreq">
 	
-	
+                
 				<label for="qfreq">
 					Enter in recessive allele frequency:
 				</label>
@@ -90,7 +90,7 @@
 			<label for="click" class="click-me">Show Graph </label>
 			<div class="popUpContent">
 				<label for="click" id="x">x</label>
-				<table>
+				<table id = "tbl">
 					<tr>		
 						<th colspan="2">Dominant</th>
 						<th>Recessive</th>
@@ -115,7 +115,6 @@
 		<select name="Replacement" id="Replacement">
 			<option value="">With Replacement</option>
 			<option value="">Without Replacement</option>
-
 		</select> -->
 
 		<div class="sample">
@@ -130,7 +129,6 @@
 				<span id="result"> </span>
 			</p>
 		</div>
-
 		<div class="bottom_of_screen">
 			<p id = "genNum">
 				generation #
@@ -141,6 +139,11 @@
 			<p id = "qVal">
 				q value
 			</p>
+            <input type="checkbox" id="useNewCheck">
+            <label for="useNewCheck" id="useNewLbl">
+                use new p and q values for next generation
+            </label>
+
 		</div>
 	</div>
 
