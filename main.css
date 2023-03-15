@@ -191,6 +191,11 @@ select, option {
  	box-sizing: border-box;
  	border-radius: 5px;
 }
+
+#tbl {
+	
+}
+
 #x {
 	position:absolute;
 	top: 0;
