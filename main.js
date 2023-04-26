@@ -52,7 +52,9 @@ function my() {
 
 function calcDispNewPQ() {
 	newP = (homoDNum*2 + heteroDNum)/(popSize*2)
+	newP = Math.round((newP + Number.EPSILON)*100) / 100
 	newQ = (homoRNum*2+heteroDNum)/(popSize*2)
+	newQ = Math.round((newQ + Number.EPSILON)*100) / 100
 
 	document.getElementById("pVal").innerHTML = "p value: " + newP
 	document.getElementById("qVal").innerHTML = "q value: " + newQ

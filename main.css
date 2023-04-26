@@ -11,13 +11,13 @@ html, body {
 }
 
 #navbar {
+
 	width: 100%;
 	margin : 0px;
 	padding : 5px;
 	height: 50px;
 	display : flex;
 	flex-direction: row;
-	background-color:rgb(33, 78, 52);
 	z-index:-5;
 	margin-bottom:15px;
 	
@@ -192,9 +192,7 @@ select, option {
  	border-radius: 5px;
 }
 
-#tbl {
-	
-}
+
 
 #x {
 	position:absolute;
@@ -242,6 +240,14 @@ select, option {
 	font-weight: 300;
 	margin-top: 10px;
 }
+
+#t3{
+	font-family: 'Inconsolata';
+	font-size: 25px;
+	font-weight: 300;
+	margin-top: 10px;
+}
+
 
 #homeGoButton{
 	display: inline-block;
