@@ -55,6 +55,8 @@ function calcDispNewPQ() {
 	newP = Math.round((newP + Number.EPSILON)*100) / 100
 	newQ = (homoRNum*2+heteroDNum)/(popSize*2)
 	newQ = Math.round((newQ + Number.EPSILON)*100) / 100
+	//calc q based on 1 - p
+	newQ = 1-newP;
 
 	document.getElementById("pVal").innerHTML = "p value: " + newP
 	document.getElementById("qVal").innerHTML = "q value: " + newQ
@@ -118,7 +120,7 @@ function killFrac(){
 	var toSub = 0
 	var killD = document.getElementById("homoDTKin")
 	killDin = killD.value
-	toSub += homoDNum*killDin
+	toSub += homoDNum*killDin	
 	homoDNum -= homoDNum*killDin
 
 	var killHet = document.getElementById("hetTKin")
