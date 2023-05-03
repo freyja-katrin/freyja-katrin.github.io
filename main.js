@@ -1,6 +1,7 @@
 var homoD, homorR, heteroD, popSize, homoDNum, heteroDNum, homoRNum, repSampleNum, noRepSampleNum, x, y, z
 var genNum = 0;
 var newP, newQ;
+const pastTable = new Array().fill(new Array(4))
 const offspring = new Array()
 const copy = new Array()
 
@@ -34,15 +35,16 @@ function my() {
 	z.innerHTML = 100 * Math.round((homoR + Number.EPSILON)*1000) / 1000
 
 	popSize = document.getElementById("popSize").value
-
+	genNum += 1;
+	document.getElementById("genNum").innerHTML = "generation #" + genNum
+	
 	assignOffspring()
 
 	updateTable()
 
 	calcDispNewPQ()
 
-	genNum += 1;
-	document.getElementById("genNum").innerHTML = "generation #" + genNum
+
 	
 	
 	/*
@@ -66,6 +68,15 @@ function updateTable() {
 	document.getElementById("t1").innerHTML = homoDNum
 	document.getElementById("t2").innerHTML = heteroDNum
 	document.getElementById("t3").innerHTML = homoRNum
+
+	/*pastTable[genNum -1][0] = genNum;
+	pastTable[genNum -1][1] = homoDNum
+	pastTable[genNum -1][2] = heteroDNum
+	pastTable[genNum -1][3] = homoRNum
+
+	console.log(pastTable.toString)
+	*/
+
 }
 
 function sampleWithReplacement(){

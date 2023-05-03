@@ -93,6 +93,7 @@ h2 {
 	width: 50%;
 	text-align: center;
 	margin-top: 10px;
+	font-size: 30px;
 }
 
 table, th, td {
@@ -247,6 +248,8 @@ select, option {
 	font-weight: 300;
 	margin-top: 10px;
 }
+
+
 
 
 #homeGoButton{
